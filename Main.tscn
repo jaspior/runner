@@ -32,7 +32,7 @@ position = Vector2( 40, -30 )
 position = Vector2( 194.377, 27.7262 )
 current = true
 process_mode = 0
-limit_top = -238
+limit_top = -120
 
 [node name="Player2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 40, 30 )
