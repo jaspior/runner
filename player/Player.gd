@@ -68,7 +68,7 @@ func move():
 
 
 func runner():
-	motion.x = SPEED
+	motion.x = 0
 
 func anim_status():
 	if is_on_floor():
