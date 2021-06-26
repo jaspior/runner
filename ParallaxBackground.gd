@@ -5,3 +5,8 @@ export (float) var speed = 100
 func _process(delta):
 	scroll_offset.x -= speed*delta
 	
+
+
+func _on_paralax_speed_timeout():
+	if speed <= 8000:
+		speed += 50

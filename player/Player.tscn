@@ -177,7 +177,7 @@ position = Vector2( -1, 2 )
 shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="."]
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 hframes = 2
 
 [node name="anim" type="AnimationPlayer" parent="."]
