@@ -49,6 +49,8 @@ func jump():
 				motion.y -= JUMP_SPEED
 			elif UP == Vector2(0, 1):
 				motion.y += JUMP_SPEED
+			$jump.play()
+			yield($jump,"finished")
 	if Player == 1:
 		if Input.is_action_pressed("jump2") and is_on_floor():
 			status = JUMP
@@ -56,6 +58,8 @@ func jump():
 				motion.y -= JUMP_SPEED
 			elif UP == Vector2(0, 1):
 				motion.y += JUMP_SPEED
+			$jump.play()
+			yield($jump,"finished")
 
 func move():
 	status = RUNNING
@@ -89,12 +93,18 @@ func anim_status():
 			$anim2.play("jump")
 
 
-
 func _on_killbox_body_entered(body):
 	if body.is_in_group("enemy"):
-		get_tree().reload_current_scene()
-	elif body.is_in_group("candy"):
-		print("=)")
+		$sprite.queue_free()
 		body.queue_free()
+		#death.play()
+		$death_anim.play("death")
+		#yield($death,"finished")
+		yield($death_anim,"animation_finished")
+		get_tree().reload_current_scene()
 
-
+	elif body.is_in_group("candy"):
+		GAME.points += 300
+		body.queue_free()
+		$item.play()
+		yield($item,"finished")
