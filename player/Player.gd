@@ -8,7 +8,7 @@ var status = RUNNING
 const SPEED = 500
 const GRAVITY = 10
 export var UP = Vector2(0,-1)
-const JUMP_SPEED = 300
+const JUMP_SPEED = 200
 export(int,"Player1","Player2") var Player
 
 
@@ -87,3 +87,14 @@ func anim_status():
 			$anim2.play("walking")
 		elif status == JUMP:
 			$anim2.play("jump")
+
+
+
+func _on_killbox_body_entered(body):
+	if body.is_in_group("enemy"):
+		get_tree().reload_current_scene()
+	elif body.is_in_group("candy"):
+		print("=)")
+		body.queue_free()
+
+

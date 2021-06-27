@@ -38,7 +38,6 @@ __meta__ = {
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_ignore_camera_zoom = true
 script = ExtResource( 4 )
-speed = 300.0
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.1, 0.1 )
@@ -98,7 +97,12 @@ wait_time = 0.1
 autostart = true
 
 [node name="Spawn" parent="." instance=ExtResource( 6 )]
-position = Vector2( 506.862, 67.9592 )
+position = Vector2( 745.242, 64.5943 )
+
+[node name="Spawn2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 746.813, 192.136 )
+rotation = 3.14159
+scale = Vector2( -1, 1 )
 
 [connection signal="timeout" from="ParallaxBackground/paralax_speed" to="ParallaxBackground" method="_on_paralax_speed_timeout"]
 [connection signal="timeout" from="running_points" to="." method="_on_running_points_timeout"]

@@ -6,7 +6,7 @@ signal passou
 var gravity = -1
 var UP = Vector2(0,gravity)
 const GRAVITY = 10
-
+onready var snake = randi()%30+10
 func _ready():
 	if global_position.y > 125:
 		gravity = 1
@@ -20,8 +20,8 @@ func _physics_process(delta):
 	apply_gravity()
 
 func move():
-	
-	motion.x = -GAME.speed / 10
+
+	motion.x = -GAME.speed / 10 - snake
 
 
 #remove se sair da tela

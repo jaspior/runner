@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/players_sprites/Noivinho-Sheet.png" type="Texture" id=2]
@@ -169,6 +169,9 @@ tracks/2/keys = {
 "values": [ ExtResource( 5 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 6.25701, 16.4393 )
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -187,3 +190,10 @@ anims/walking = SubResource( 3 )
 [node name="anim2" type="AnimationPlayer" parent="."]
 anims/jump = SubResource( 4 )
 anims/walking = SubResource( 5 )
+
+[node name="killbox" type="Area2D" parent="."]
+
+[node name="shape" type="CollisionShape2D" parent="killbox"]
+shape = SubResource( 6 )
+
+[connection signal="body_entered" from="killbox" to="." method="_on_killbox_body_entered"]
