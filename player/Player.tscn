@@ -3,8 +3,8 @@
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/players_sprites/Noivinho-Sheet.png" type="Texture" id=2]
 [ext_resource path="res://sprites/players_sprites/Noivinho_pulando-Sheet.png" type="Texture" id=3]
-[ext_resource path="res://sprites/players_sprites/Noivinha_pulando-Sheet.png" type="Texture" id=4]
-[ext_resource path="res://sprites/players_sprites/Noivinhha-Sheet.png" type="Texture" id=5]
+[ext_resource path="res://sprites/players_sprites/Noivinha2-sheet.png" type="Texture" id=4]
+[ext_resource path="res://sprites/players_sprites/Noivinha_pulando2-Sheet.png" type="Texture" id=5]
 [ext_resource path="res://samples/jump.wav" type="AudioStream" id=6]
 [ext_resource path="res://samples/coin.wav" type="AudioStream" id=7]
 [ext_resource path="res://samples/death.wav" type="AudioStream" id=8]
@@ -130,7 +130,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ ExtResource( 5 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -170,7 +170,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=6]
@@ -237,8 +237,8 @@ position = Vector2( -1, 2 )
 shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="."]
-texture = ExtResource( 3 )
-hframes = 2
+texture = ExtResource( 4 )
+hframes = 4
 
 [node name="anim" type="AnimationPlayer" parent="."]
 anims/jump = SubResource( 2 )
