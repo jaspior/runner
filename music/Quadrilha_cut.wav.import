@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Quadrilha_cut.wav-1b2bf8ab608a27c4fce2ced2f193c035.sample"
+
+[deps]
+
+source_file="res://music/Quadrilha_cut.wav"
+dest_files=[ "res://.import/Quadrilha_cut.wav-1b2bf8ab608a27c4fce2ced2f193c035.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

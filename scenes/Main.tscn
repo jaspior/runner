@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Main.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Main.gd" type="Script" id=2]
 [ext_resource path="res://sprites/sprites/background.png" type="Texture" id=3]
-[ext_resource path="res://ParallaxBackground.gd" type="Script" id=4]
+[ext_resource path="res://scenes/ParallaxBackground.gd" type="Script" id=4]
 [ext_resource path="res://tileset/ground/tileset_ground.tres" type="TileSet" id=5]
 [ext_resource path="res://enemies/Spawn.tscn" type="PackedScene" id=6]
 [ext_resource path="res://font/PrStart.ttf" type="DynamicFontData" id=7]
@@ -12,15 +12,19 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 529.161, 10 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="Animation" id=2]
+resource_name = "Test"
+length = 6.0
+
+[sub_resource type="DynamicFont" id=3]
 size = 14
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 8
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 size = 8
 font_data = ExtResource( 7 )
 
@@ -96,12 +100,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxBackground"]
+anims/Test = SubResource( 2 )
+
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="score" type="Label" parent="HUD"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "9999"
 align = 1
 valign = 1
@@ -114,7 +121,7 @@ margin_left = 457.111
 margin_top = 1.06066
 margin_right = 497.111
 margin_bottom = 15.0607
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "99999"
 align = 1
@@ -128,7 +135,7 @@ margin_left = 448.172
 margin_top = 10.7907
 margin_right = 512.172
 margin_bottom = 24.7907
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "hi-score"
 align = 1

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Quadrilha Junina - MÚSICA DE FESTA JUNINA SEM DIREITOS AUTORAIS - festa junina quadrilha tradicional.ogg-955872b06bd702c39af028c3563e754e.oggstr"
+
+[deps]
+
+source_file="res://music/Quadrilha Junina - MÚSICA DE FESTA JUNINA SEM DIREITOS AUTORAIS - festa junina quadrilha tradicional.ogg"
+dest_files=[ "res://.import/Quadrilha Junina - MÚSICA DE FESTA JUNINA SEM DIREITOS AUTORAIS - festa junina quadrilha tradicional.ogg-955872b06bd702c39af028c3563e754e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,520 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://font/PrStart.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://sprites/sprites/background.png" type="Texture" id=2]
+[ext_resource path="res://sprites/players_sprites/Noivinho-Sheet.png" type="Texture" id=3]
+[ext_resource path="res://sprites/players_sprites/Noivinha2-sheet.png" type="Texture" id=4]
+[ext_resource path="res://tileset/ground/tileset_ground.tres" type="TileSet" id=5]
+[ext_resource path="res://music/Quadrilha Junina - MÚSICA DE FESTA JUNINA SEM DIREITOS AUTORAIS - festa junina quadrilha tradicional.ogg" type="AudioStream" id=6]
+[ext_resource path="res://sprites/players_sprites/Caipira7-Sheet.png" type="Texture" id=7]
+[ext_resource path="res://music/Quadrilha_cut.wav" type="AudioStream" id=8]
+[ext_resource path="res://scenes/ends/End3.gd" type="Script" id=9]
+[ext_resource path="res://samples/footstep.wav" type="AudioStream" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 11
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 14
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 9
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.242538, 0.386047, 0.730469, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=10]
+resource_name = "Event1"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("noivinha:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 12, 15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 40, 152 ), Vector2( 235, 152 ), Vector2( 235, 152 ), Vector2( -26, 152 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("noivinha:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 180.0, 180.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("novinho:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 40, 95 ), Vector2( 235, 95 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("novinho:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("novinho:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("noivinha:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 12, 12.4, 12.8, 13.4, 13.8, 14.2, 14.6, 14.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 0, 1, 2, 3, 0, 1, 2, 3 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("background:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 256, 124 ), Vector2( 256, 124 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("background:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("TileMap:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("noivinha:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 9.9, 10, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("novinho:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("music:stream")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("music:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0.1, 2.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("music:stream:loop_offset")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 10000.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("music:pitch_scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 1.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("julio:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 1.5, 3.3, 4, 9.9, 12, 15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 520, 152 ), Vector2( 461, 152 ), Vector2( 461, 152 ), Vector2( 223.033, 152 ), Vector2( 223.033, 152 ), Vector2( -42, 152 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("julio:frame")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 1.7, 2.2, 2.7, 3.2, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 12, 12.4, 12.8, 13.2, 13.6, 14, 14.4, 14.8, 15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 2, 2, 3, 3 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("sfx:stream")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("sfx:playing")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 1.6, 3.2, 4, 9.9, 12, 15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("sfx:pitch_scale")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 4, 11.9, 12, 15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 1.2, 1.2, 1.6, 1.6 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "Event2"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("texts/end:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("texts/end2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("texts/end3:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("texts/score:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("texts/Button2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("music:stream")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("music:pitch_scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("music:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="End3" type="Node"]
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 256, 124 )
+texture = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 917504, 0, 0, 917505, 0, 1, 917506, 0, 1, 917507, 0, 1, 917508, 0, 1, 917509, 0, 1, 917510, 0, 1, 917511, 0, 1, 917512, 0, 1, 917513, 0, 1, 917514, 0, 1, 917515, 0, 1, 917516, 0, 1, 917517, 0, 1, 917518, 0, 1, 917519, 0, 1, 917520, 0, 1, 917521, 0, 1, 917522, 0, 1, 917523, 0, 1, 917524, 0, 1, 917525, 0, 1, 917526, 0, 1, 917527, 0, 1, 917528, 0, 1, 917529, 0, 1, 917530, 0, 1, 917531, 0, 1, 917532, 0, 1, 917533, 0, 1, 917534, 0, 1, 917535, 0, 1, 917536, 0, 1, 917537, 0, 1, 917538, 0, 1, 917539, 0, 1, 917540, 0, 1, 917541, 0, 1, 917542, 0, 1, 917543, 0, 1, 917544, 0, 1, 917545, 0, 1, 917546, 0, 1, 917547, 0, 1, 917548, 0, 1, 917549, 0, 1, 917550, 0, 1, 917551, 0, 1, 917552, 0, 1, 917553, 0, 1, 917554, 0, 1, 917555, 0, 1, 917556, 0, 1, 917557, 0, 1, 917558, 0, 1, 917559, 0, 1, 917560, 0, 1, 917561, 0, 1, 917562, 0, 1, 917563, 0, 1, 917564, 0, 1, 917565, 0, 1, 917566, 0, 2, 983040, 0, 131072, 983041, 0, 131073, 983042, 0, 131073, 983043, 0, 131073, 983044, 0, 131073, 983045, 0, 131073, 983046, 0, 131073, 983047, 0, 131073, 983048, 0, 131073, 983049, 0, 131073, 983050, 0, 131073, 983051, 0, 131073, 983052, 0, 131073, 983053, 0, 131073, 983054, 0, 131073, 983055, 0, 131073, 983056, 0, 131073, 983057, 0, 131073, 983058, 0, 131073, 983059, 0, 131073, 983060, 0, 131073, 983061, 0, 131073, 983062, 0, 131073, 983063, 0, 131073, 983064, 0, 131073, 983065, 0, 131073, 983066, 0, 131073, 983067, 0, 131073, 983068, 0, 131073, 983069, 0, 131073, 983070, 0, 131073, 983071, 0, 131073, 983072, 0, 131073, 983073, 0, 131073, 983074, 0, 131073, 983075, 0, 131073, 983076, 0, 131073, 983077, 0, 131073, 983078, 0, 131073, 983079, 0, 131073, 983080, 0, 131073, 983081, 0, 131073, 983082, 0, 131073, 983083, 0, 131073, 983084, 0, 131073, 983085, 0, 131073, 983086, 0, 131073, 983087, 0, 131073, 983088, 0, 131073, 983089, 0, 131073, 983090, 0, 131073, 983091, 0, 131073, 983092, 0, 131073, 983093, 0, 131073, 983094, 0, 131073, 983095, 0, 131073, 983096, 0, 131073, 983097, 0, 131073, 983098, 0, 131073, 983099, 0, 131073, 983100, 0, 131073, 983101, 0, 131073, 983102, 0, 131074 )
+
+[node name="texts" type="Node2D" parent="."]
+
+[node name="end" type="Label" parent="texts"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = -5.0
+margin_right = 513.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0196078, 1, 0.219608, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+text = "PARABÉNS, CRIS!
+ (Final 3/3)"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="end2" type="Label" parent="texts"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 47.0
+margin_right = 512.0
+margin_bottom = 89.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0196078, 0.839216, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+text = "You wasted a lot of  time running with
+ no purpose and the Talarico 
+took the love of your life away"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="end3" type="Label" parent="texts"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 155.0
+margin_right = 513.0
+margin_bottom = 183.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 0.0196078, 0.0196078, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+text = "Final Score:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="texts"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 172.0
+margin_right = 513.0
+margin_bottom = 200.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="texts"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 200.0
+margin_top = 114.0
+margin_right = 320.0
+margin_bottom = 133.0
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.964706, 0.964706, 0.964706, 1 )
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/Event1 = SubResource( 10 )
+anims/Event2 = SubResource( 11 )
+
+[node name="novinho" type="Sprite" parent="."]
+position = Vector2( 40, 95 )
+texture = ExtResource( 3 )
+hframes = 4
+
+[node name="noivinha" type="Sprite" parent="."]
+position = Vector2( 40, 152 )
+rotation = 3.14159
+scale = Vector2( -1, 1 )
+texture = ExtResource( 4 )
+hframes = 4
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="julio" type="Sprite" parent="."]
+position = Vector2( -42, 152 )
+rotation = 3.14159
+texture = ExtResource( 7 )
+hframes = 4
+frame = 3
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[connection signal="pressed" from="texts/Button2" to="." method="_on_Button2_pressed"]

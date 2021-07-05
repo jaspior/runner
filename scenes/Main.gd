@@ -5,6 +5,7 @@ var points = 0
 func _ready():
 	$music.play()
 	GAME.points = points
+	$ParallaxBackground/AnimationPlayer.play("Test")
 
 func _process(delta):
 	#GAME.points = points
