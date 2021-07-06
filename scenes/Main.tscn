@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Main.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://enemies/Spawn.tscn" type="PackedScene" id=6]
 [ext_resource path="res://font/PrStart.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://music/Quadrilha Junina Clássica.ogg" type="AudioStream" id=8]
+[ext_resource path="res://sprites/controle.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 529.161, 10 )
@@ -26,6 +27,9 @@ font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 8
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 7 )
 
 [node name="Main" type="Node2D"]
@@ -159,5 +163,45 @@ autostart = true
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 
+[node name="Touch" type="Node" parent="."]
+
+[node name="Button2" type="TouchScreenButton" parent="Touch"]
+position = Vector2( 446, 184 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Touch/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.241
+margin_top = 18.2551
+margin_right = -22.759
+margin_bottom = -93.7449
+custom_fonts/font = SubResource( 6 )
+text = "Noiva"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button1" type="TouchScreenButton" parent="Touch"]
+position = Vector2( 383, 184 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Touch/Button1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.241
+margin_top = 18.2551
+margin_right = -22.759
+margin_bottom = -93.7449
+custom_fonts/font = SubResource( 6 )
+text = "Noivo"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="timeout" from="ParallaxBackground/paralax_speed" to="ParallaxBackground" method="_on_paralax_speed_timeout"]
 [connection signal="timeout" from="running_points" to="." method="_on_running_points_timeout"]
+[connection signal="released" from="Touch/Button2" to="Player2" method="_on_Button2_released"]
+[connection signal="released" from="Touch/Button1" to="Player" method="_on_Button1_released"]

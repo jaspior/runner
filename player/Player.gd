@@ -114,3 +114,42 @@ func _on_killbox_body_entered(body):
 		body.queue_free()
 		$item.play()
 		yield($item,"finished")
+
+
+func _on_Button1_pressed():
+	if is_on_floor():
+			status = JUMP
+			if UP == Vector2(0,-1):
+				motion.y -= JUMP_SPEED
+			elif UP == Vector2(0, 1):
+				motion.y += JUMP_SPEED
+			$jump.play()
+			yield($jump,"finished")
+
+
+
+func _on_Button1_released():
+		if Player == 0:
+			if is_on_floor():
+				status = JUMP
+				if UP == Vector2(0,-1):
+					motion.y -= JUMP_SPEED
+				elif UP == Vector2(0, 1):
+					motion.y += JUMP_SPEED
+				$jump.play()
+				yield($jump,"finished")
+
+
+
+
+
+func _on_Button2_released():
+	if Player == 1:
+		if is_on_floor():
+				status = JUMP
+				if UP == Vector2(0,-1):
+					motion.y -= JUMP_SPEED
+				elif UP == Vector2(0, 1):
+					motion.y += JUMP_SPEED
+				$jump.play()
+				yield($jump,"finished")
