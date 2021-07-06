@@ -1,3 +1,3 @@
 # runner
  
-Teste [aqui](https://jaspior.github.io/runner/export/runner.html)
+Teste [aqui](https://jaspior.github.io/runner/export/index.html)
