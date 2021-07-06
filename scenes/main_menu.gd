@@ -17,4 +17,8 @@ func _ready():
 
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://scenes/Main_cutscene.tscn")
+	get_tree().change_scene("res://scenes/Instructions.tscn")
+
+
+func _on_Button2_pressed():
+	get_tree().change_scene("res://scenes/About.tscn")

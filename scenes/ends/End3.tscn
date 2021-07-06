@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://font/PrStart.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://sprites/sprites/background.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://music/Quadrilha_cut.wav" type="AudioStream" id=8]
 [ext_resource path="res://scenes/ends/End3.gd" type="Script" id=9]
 [ext_resource path="res://samples/footstep.wav" type="AudioStream" id=10]
+[ext_resource path="res://samples/Berrante.ogg" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -46,8 +47,19 @@ bg_color = Color( 0.242538, 0.386047, 0.730469, 1 )
 [sub_resource type="DynamicFont" id=9]
 font_data = ExtResource( 1 )
 
-[sub_resource type="Animation" id=10]
-resource_name = "Event1"
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.242538, 0.386047, 0.730469, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="DynamicFont" id=14]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=15]
 length = 15.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("noivinha:position")
@@ -290,8 +302,7 @@ tracks/19/keys = {
 "values": [ 1.0, 1.2, 1.2, 1.6, 1.6 ]
 }
 
-[sub_resource type="Animation" id=11]
-resource_name = "Event2"
+[sub_resource type="Animation" id=16]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("texts/end:modulate")
@@ -384,10 +395,58 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 0.1 ),
+"times": PoolRealArray( 0, 2.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("sfx:stream")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("sfx:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.1, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("sfx:pitch_scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("texts/Button3:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [node name="End3" type="Node"]
@@ -433,7 +492,7 @@ custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.0196078, 0.839216, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 text = "You wasted a lot of  time running with
- no purpose and the Talarico 
+ no purpose and now the Talarico 
 took the love of your life away"
 align = 1
 valign = 1
@@ -488,9 +547,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Button3" type="Button" parent="texts"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 184.0
+margin_top = 139.0
+margin_right = 328.0
+margin_bottom = 158.0
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/focus = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0.964706, 0.964706, 0.964706, 1 )
+text = "Main Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="anim" type="AnimationPlayer" parent="."]
-anims/Event1 = SubResource( 10 )
-anims/Event2 = SubResource( 11 )
+anims/Event1 = SubResource( 15 )
+anims/Event2 = SubResource( 16 )
 
 [node name="novinho" type="Sprite" parent="."]
 position = Vector2( 40, 95 )
@@ -505,7 +582,7 @@ texture = ExtResource( 4 )
 hframes = 4
 
 [node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( 6 )
 
 [node name="julio" type="Sprite" parent="."]
 position = Vector2( -42, 152 )
@@ -515,6 +592,7 @@ hframes = 4
 frame = 3
 
 [node name="sfx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
+stream = ExtResource( 11 )
 
 [connection signal="pressed" from="texts/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="texts/Button3" to="." method="_on_Button3_pressed"]

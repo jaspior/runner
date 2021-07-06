@@ -101,11 +101,11 @@ func _on_killbox_body_entered(body):
 		$death_anim.play("death")
 		#yield($death,"finished")
 		yield($death_anim,"animation_finished")
-		if GAME.points < 3000:
+		if GAME.points < 2500:
 			get_tree().change_scene("res://scenes/ends/End1.tscn")
-		elif GAME.points >= 3000 and GAME.points < 10000:
+		elif GAME.points >= 2500 and GAME.points < 5000:
 			get_tree().change_scene("res://scenes/ends/End2.tscn")
-		elif GAME.points >= 10000:
+		elif GAME.points >= 5000:
 			get_tree().change_scene("res://scenes/ends/End3.tscn")
 		#get_tree().reload_current_scene()
 
